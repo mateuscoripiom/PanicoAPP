@@ -48,8 +48,9 @@ exemplo (detalhes) - não será utilizado:
 GET: /company/{company_id} - Coleta detalhes de um estúdio/produtora por ID.
 exemplo - https://api.themoviedb.org/3/company/{company_id}?api_key=<<api_key>>
 
-
-
-
+Confiuração: Pega as informações de configuração de todo o sistema. 
+exemplo: (detahes) - será utilizado: 
+GET: /configuration - Contém os dados relevantes para construção de URLs de iamgem e as chaves para alteração. 
+exemplo - 
 
 
