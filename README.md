@@ -1,13 +1,15 @@
-# PanicoAPP
-<b>Dupla:  Mateus Coripio e Yasmim Borges
+# PanicoAPP <img src="https://cdn-icons-png.flaticon.com/512/1141/1141463.png" width="60px"/>
+
+>Aplicativo voltado para o universo dos filmes da franquia de horror-slasher Pânico, criada por Wes Craven e iniciada em 1996. 
+
+<b>Dupla realizadora:  Mateus Coripio e Yasmim Borges<br>
 3º DS ETIM - PAM (Profª. Aline Firmino Brito)</b>
 
-Utilizando a API do The Movie Database (TMDB)<br>
-<b>URL da documentação:</b> https://developers.themoviedb.org/3/getting-started/introduction
+Utilizando a API do <i>The Movie Database (TMDB)</i><br>
+<img src="https://cdn-icons-png.flaticon.com/512/252/252006.png" width="15px"/> <b>URL da documentação:</b> https://developers.themoviedb.org/3/getting-started/introduction<br>
+<img src="https://cdn-icons-png.flaticon.com/512/252/252006.png" width="15px"/> <b>URL de acesso a API:</b> https://api.themoviedb.org/3/
 
-<b>URL de acesso a API:</b> https://api.themoviedb.org/3/
-
-<b>Métodos e dados de autenticação:</b><br>
+<b><h2>Métodos e dados de autenticação:</h2></b>
 GET: /authentication/guest_session/new - Método utilizado para criar uma nova sessão de convidado. Sessões de convidados deixam o usuário dar notas para filmes e séries sem ter uma conta.<br>
 exemplo - ````https://api.themoviedb.org/3/authentication/guest_session/new?api_key=<<api_key>>```` <br>
 Dados retornados:
@@ -18,7 +20,7 @@ Dados retornados:
     "expires_at": "2023-04-06 13:58:28 UTC"
 }
 ````
-<br>
+___
 
 GET: /authentication/token/new - Cria uma requisição temporária de um token para possibilitar a validação de um login.<br>
 exemplo - ````https://api.themoviedb.org/3/authentication/token/new?api_key=<<api_key>>````<br>
@@ -30,7 +32,7 @@ Dados retornados:
     "request_token": "61618614927b357ef70e1ef91602bd6fe0599ead"
 }
 ````
-<br>
+___
 
 POST: /authentication/session/new - Depois de ter validado o pedido de um token, este método é usado para criar uma ID de sessão válido e completo.<br>
 exemplo - ````https://api.themoviedb.org/3/authentication/session/new?api_key=<<api_key>>````<br>
@@ -48,7 +50,7 @@ Dados retornados:
     "status_message": "The resource you requested could not be found."
 }
 ````
-<br>
+___
 
 POST: /authentication/token/validate_with_login - Permite que um app valide um pedido de token só colocando o usuário e a senha. <br>
 exemplo - ````https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=<<api_key>>````<br>
@@ -68,7 +70,7 @@ Dados retornados:
     "status_message": "The resource you requested could not be found."
 }
 ````
-<br>
+___
 
 POST: /authentication/session/convert/4 - Usa este método para criar um ID de sessão v3 se você já tem um token de acesso v4 válido.<br>
 exemplo - ````https://api.themoviedb.org/3/authentication/session/convert/4?api_key=<<api_key>>````<br>
@@ -87,7 +89,7 @@ Dados retornados:
     "status_message": "This token hasn't been granted write permission by the user."
 }
 ````
-<br>
+___
 
 DELETE: /authentication/session - Método usado para deletar/deslogar uma sessão.<br>
 exemplo - ````https://api.themoviedb.org/3/authentication/session?api_key=<<api_key>>````<br>
@@ -107,7 +109,7 @@ Dados retornados:
 ````
 <br>
 
-<b>Métodos disponíveis (endpoints) e indicação de qual/quais serão implementados na aplicação:</b>
+<b><h2>Métodos disponíveis (endpoints) e indicação de qual/quais serão implementados na aplicação:</h2></b>
 Certificações: Para obter classificações etárias em filmes e séries.<br>
 exemplo (filmes) - será utilizado: <br>
 GET: /certification/movie/list - Pega uma lista atualizada de todas as classificações etárias oficialmente suportadas em filmes.<br>
@@ -143,7 +145,8 @@ Dados retornados:
                 "order": 5
             },...
 ````
-<br>
+
+___
 
 Mudanças: Para obter lista de filmes, séries ou atores que tiveram alguma alteração na página nas últimas 24 horas (padrão) ou em uma determinada data dentro de um período de 14 dias.<br>
 exemplo (filmes) - não será utilizado:<br>
@@ -182,7 +185,7 @@ Dados retornados:
             "adult": false
         },...
 ````
-<br>
+___
 
 Coleções: Para obter imagens, detalhes e traduções de coleções de filmes e séries já criadas.<br>
 exemplo (detalhes) - não será utilizado:<br>
@@ -240,7 +243,7 @@ Dados retornados:
         },
         ...
 ````
-<br>
+___
 
 Estúdios e produtoras: Coleta detalhes, nomes alternativos e imagens de estúdios e produtoras.<br>
 exemplo (detalhes) - não será utilizado:<br>
@@ -263,38 +266,232 @@ Dados retornados:
     }
 }
 ````
-<br>
+___
 
 Configuração: Pega as informações de configuração de todo o sistema.<br>
 exemplo: (detahes) - não será utilizado:<br>
 GET: /configuration - Contém os dados relevantes para construção de URLs de iamgem e as chaves para alteração.<br> 
 exemplo - ````https://api.themoviedb.org/3/configuration?api_key=<<api_key>>````<br>
-
+___
 
 Créditos: Coleta as informações de crédito de filmes e séries.<br>
 exemplo: (detahes) - será utilizado:<br>
 GET: /configuration - Contém os dados relevantes para construção de URLs de iamgem e as chaves para alteração.<br> 
 exemplo - ````https://api.themoviedb.org/3/credit/{credit_id}?api_key=<<api_key>>````<br>
+___
 
 Descobrir: Reune diferentes dados de filmes ou séries por classificação, número de votos, gêneros e certificações.<br>
 exemplo: (detalhes) - não será utilizado:<br>
 GET: /discover/movie - Usado para descobrir filmes.<br>
 exemplo - ````https://api.themoviedb.org/3/discover/movie?api_key=<<api_key>>&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate````<br>
+___
 
 Encontrar: Este método facilita a busca de objetos no banco de dados do TMDB.<br>
 exemplo: (detahes) - não será utilizado:<br>
 GET: /find/{external_id}<br> 
 exemplo - ````https://api.themoviedb.org/3/find/{external_id}?api_key=<<api_key>>&language=en-US&external_source=imdb_id````<br>
+___
 
 Gêneros: Pega uma lista oficial de gêneros de filmes.<br>
 exemplo: (detalhes) - não será utilizado:<br>
 GET: /genre/movie/list<br>
 exemplo - ````https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US````<br>
+___
 
 Sessões de convidados: Coleta informações de classificação para uma sessão de convidados.<br>
 exemplo: (detalhes) - não será utilizado:<br>
 GET: /guest_session/{guest_session_id}/rated/movies - Coleta informações para filmes<br>
 exemplo - ````https://api.themoviedb.org/3/guest_session/{guest_session_id}/rated/movies?api_key=<<api_key>>&language=en-US&sort_by=created_at.asc````<br>
 
+___
 
+Palavras-chaves: Pega detalhes de filmes ou uma lista deles, que possuem uma determinada palavra chave.<br>
+exemplo: (detalhes) - não será utilizado:<br>
+GET: /keyword/{keyword_id} - Coleta detalhes dos filmes de uma palavra-chave através de seu ID<br>
+exemplo - ```` https://api.themoviedb.org/3/keyword/{keyword_id}?api_key=<<api_key>>````
+___
 
+Listas: Usado para manipular listas ou ver listas pré-criadas.
+exemplo: (detalhes) - não será utilizado:<br>
+GET: /list/{list_id} - Coleta detalhes de uma lista já criada<br>
+exemplo - ```` https://api.themoviedb.org/3/list/{list_id}?api_key=<<api_key>>&language=en-US````<br>
+POST: /list - Cria uma lista nova<br>
+exemplo - ````https://api.themoviedb.org/3/list?api_key=<<api_key>>````<br>
+Request Body:
+````
+{
+  "name": "This is my awesome test list.",
+  "description": "Just an awesome list dawg.",
+  "language": "en"
+}
+````
+DELETE: /list/{list_id} - Deleta lista criada<br>
+exemplo - ````https://api.themoviedb.org/3/list/{list_id}?api_key=<<api_key>>````<br>
+___
+
+Filmes: Usado para pegar qualquer informação sobre filme, seja detalhes, elenco, imagens, estúdio, nomes, etc.<br>
+exemplo: (detalhes) - será utilizado:<br>
+GET: /movie/{movie_id} - Coleta os detalhes gerais do filme (necessário especificar a linguagem)<br>
+exemplo - ````https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US````<br>
+Dados retornados:
+````{
+    "adult": false,
+    "backdrop_path": "/44immBwzhDVyjn87b3x3l9mlhAD.jpg",
+    "belongs_to_collection": {
+        "id": 2602,
+        "name": "Pânico: Coleção",
+        "poster_path": "/glmWNyOkoXMqltWJJhQelAvIVxk.jpg",
+        "backdrop_path": "/dZqsivuEhuHMYgLiMjtMXLImRzE.jpg"
+    },
+    "budget": 35000000,
+    "genres": [
+        {
+            "id": 27,
+            "name": "Terror"
+        },
+        {
+            "id": 9648,
+            "name": "Mistério"
+        },
+        {
+            "id": 53,
+            "name": "Thriller"
+        }
+    ],
+    "homepage": "http://www.screammovie.com",
+    "id": 934433,
+    "imdb_id": "tt17663992",
+    "original_language": "en",
+    "original_title": "Scream VI",
+    "overview": "Sam, Tara, Chad e Mindy, os quatro sobreviventes do massacre realizado pelo Ghostface, decidem deixar Woodsboro para trás em busca de um novo começo em uma cidade diferente. Mas não demora muito para eles se tornarem alvo de um novo serial killer mascarado.",
+    "popularity": 416.019,
+    "poster_path": "/dbd7DQCHZ57SF4tM2puHtwNxDQD.jpg",
+    "production_companies": [
+        {
+            "id": 126588,
+            "logo_path": "/cNhOITS96oOV7SCgUHxvZlWRecx.png",
+            "name": "Radio Silence",
+            "origin_country": "US"
+        },
+        {
+            "id": 130448,
+            "logo_path": "/yHWTTGKbOGZKUd1cp6l3uLyDeiv.png",
+            "name": "Project X Entertainment",
+            "origin_country": "US"
+        },
+        {
+            "id": 143790,
+            "logo_path": "/wo1smiXdiwwxai2dwJlRiGwE7rS.png",
+            "name": "Spyglass Media Group",
+            "origin_country": "US"
+        },
+        {
+            "id": 4,
+            "logo_path": "/gz66EfNoYPqHTYI4q9UEN4CbHRc.png",
+            "name": "Paramount",
+            "origin_country": "US"
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "2023-03-08",
+    "revenue": 141000000,
+    "runtime": 123,
+    "spoken_languages": [
+        {
+            "english_name": "English",
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Released",
+    "tagline": "Nova York. Novas regras.",
+    "title": "Pânico VI",
+    "video": false,
+    "vote_average": 7.3,
+    "vote_count": 474
+}
+````
+GET: /movie/{movie_id}/images - Coleta imagens dos filmes (será muito utilizado)<br>
+exemplo - ````https://api.themoviedb.org/3/movie/{movie_id}/images?api_key=<<api_key>>```` <br>
+Dados retornados:
+````
+{
+    "backdrops": [
+        {
+            "aspect_ratio": 1.778,
+            "height": 2160,
+            "iso_639_1": null,
+            "file_path": "/44immBwzhDVyjn87b3x3l9mlhAD.jpg",
+            "vote_average": 5.384,
+            "vote_count": 2,
+            "width": 3840
+        },
+        {
+            "aspect_ratio": 1.778,
+            "height": 1080,
+            "iso_639_1": null,
+            "file_path": "/1svWiR9Jza3Eplhu0zGbTAbzNZd.jpg",
+            "vote_average": 5.252,
+            "vote_count": 4,
+            "width": 1920
+        },
+        ...
+}
+````
+POST: /movie/{movie_id}/rating - Tendo uma sessão de ID válida, é possível que o usuário dê uma avaliação para o filme. (não será utilizado)<br>
+exemplo - ````https://api.themoviedb.org/3/movie/{movie_id}/rating?api_key=<<api_key>>````<br>
+Request Body:
+````
+{
+  "value": 8.5
+}
+````
+DELETE: /movie/{movie_id}/rating - Deleta uma avaliação feita pelo próprio usuário. (não será utilizado)<br>
+exemplo - ```` https://api.themoviedb.org/3/movie/{movie_id}/rating?api_key=<<api_key>>````<br>
+___
+
+Networks: Coleta detalhes de networks, seja imagens ou títulos alternativos.<br>
+exemplo: (detalhes) - não será utilizado:<br>
+GET: /network/{network_id} - Coleta detalhes gerais da network especificada<br>
+exemplo - ```` https://api.themoviedb.org/3/network/{network_id}?api_key=<<api_key>>````<br>
+___
+
+Popularidade: Coleta os filmes ou séries que estão em alta nas últimas 24 horas.<br>
+exemplo: (detalhes) - não será utilizado:<br>
+GET: /trending/{media_type}/{time_window}<br>
+exemplo - ```` https://api.themoviedb.org/3/trending/all/day?api_key=<<api_key>>````
+___
+
+Pessoas: Coleta informações das pessoas envolvidas em produções, sejam detalhes, imagens, popularidade, etc.<br>
+exemplo: (detalhes) - não será utilizado:<br>
+GET: /person/{person_id}<br>
+exemplo - ```` https://api.themoviedb.org/3/person/{person_id}?api_key=<<api_key>>&language=en-US````
+___
+
+Avaliações: Coleta informações de uma avaliação de um filme ou série.<br>
+exemplo: (detalhes) - não será utilizado:<br>
+GET: /review/{review_id}<br>
+exemplo - ```` https://api.themoviedb.org/3/review/{review_id}?api_key=<<api_key>>````
+___
+
+Busca: Utilizado para buscar de uma forma mais geral por empresas, estúdios, palavras-chaves, filmes, etc.<br>
+exemplo: (detalhes) - não será utilizado:<br>
+GET: /search/company - Busca por empresas<br>
+exemplo - ```` https://api.themoviedb.org/3/search/company?api_key=<<api_key>>&page=1````
+___
+
+TV: Tudo relacionado a TV exatamente igual a de filmes, porém os comandos invés de apontarem para filmes, agora apontam para séries, fora isso os comandos seguem o mesmo padrão.<br>
+exemplo: (detalhes) - não será utilizado:<br>
+GET: /movie/{movie_id} - Coleta os detalhes gerais do filme (necessário especificar a linguagem)<br>
+GET: /tv/{tv_id} - Coleta os detalhes gerais de uma série de TV
+___
+
+Provedores de streaming: Coleta informações de streamings onde determinado título está disponível no seu país.<br>
+exemplo: (detalhes) - não será utilizado:<br>
+GET: /watch/providers/regions - Retorna uma lista que o banco de dados tem streamings cadastrados para determinado país<br>
+exemplo - ```` https://api.themoviedb.org/3/watch/providers/regions?api_key=<<api_key>>&language=en-US````
