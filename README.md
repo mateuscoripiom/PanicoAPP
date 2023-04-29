@@ -1,6 +1,8 @@
 # PanicoAPP <img src="https://cdn-icons-png.flaticon.com/512/1141/1141463.png" width="40px"/>
 
->Aplicativo voltado para o universo dos filmes da franquia de horror-slasher Pânico, criada por Wes Craven e iniciada em 1996. 
+>Aplicativo voltado para o universo dos filmes da franquia de horror-slasher Pânico, criada por Wes Craven e iniciada em 1996. <br>
+
+><b>Descrição da aplicação:</b> Nesta aplicação voltada para o universo de Pânico, o usuário poderá explorar informações de todos os filmes, e da série. Com direito a galeria de imagens, elenco completo, cadastro, escolha de personagem personalizado e até mesmo uma ligação com o Ghostface. Todas as informações técnicas do filmes serão distribuidas através da API do site TMDB (The Movie Database).
 
 <b>Dupla realizadora:  Mateus Coripio e Yasmim Borges<br>
 3º DS ETIM - PAM (Profª. Aline Firmino Brito)</b>
