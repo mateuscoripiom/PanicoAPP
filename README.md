@@ -495,3 +495,36 @@ Provedores de streaming: Coleta informações de streamings onde determinado tí
 exemplo: (detalhes) - não será utilizado:<br>
 GET: /watch/providers/regions - Retorna uma lista que o banco de dados tem streamings cadastrados para determinado país<br>
 exemplo - ```` https://api.themoviedb.org/3/watch/providers/regions?api_key=<<api_key>>&language=en-US````
+___
+
+<b><h2>Protótipo e mapa de navegação:</h2></b>
+<h3>Tela 1: Tela de Splash</h3>
+<img src="https://i.imgur.com/ZFBsIxc.png" width="20%">
+A tela de splash será somente utilizada na abertura da aplicação.<br>
+<h3>Tela 2: Login</h3>
+<img src="https://i.imgur.com/Cb0g5i1.png" width="20%">
+Nesta tela, será realizado o login do usuário. Caso o usuário não possua um, pode clicar no texto mais abaixo, onde será redirecionado para a próxima tela, a de cadastro. Caso o usuário já tenha um login, ele pode somente colocá-lo e clicar o botão "SCREAM" para adentrar à aplicação. Se o usuário já tiver utilizado o app e logado, esta tela não aparecerá para ele enquanto sua sessão estiver ativa.<br>
+<h3>Tela 3: Cadastro</h3>
+<img src="https://i.imgur.com/h9noZ34.png" width="20%">
+Nesta tela, o usuário poderá realizar o seu cadastro. Será pedido o nome, email e uma senha. Após preencher suas informações, ele pode clicar no botão "SCREAM", que o levará para a tela inicial. Caso ele já possua um login, podera utilizar o texto mais abaixo para ir de volta à tela de login.<br>
+<h3>Tela 4: Inicial</h3>
+<img src="https://i.imgur.com/Cz9eTeC.png" width="20%">
+Esta tela somente poderá ser acessada pelo usuário se ele estiver logado. Nela, teremos o vislumbre geral de tudo que nossa aplicação pode oferecer. Temos acima, ao lado da logo, uma imagem circular, que na verdade é um botão para acessar a tela de perfil do usuário. Já abaixo, é mostrado todos os filmes da franquia e também uma opção para conhecer mais sobre a série deste universo. Já no canto mais inferior da tela, teremos uma barra de navegação com alguns ícones: tela inicial, filmes, série, atores e a ligação.<br>
+<h3>Tela 5: Filmes</h3>
+<img src="https://i.imgur.com/S7C9gk0.png" width="20%">
+Nesta tela serão exibidos todos os filmes da franquia na ordem de lançamento. Cada filme pode ser clicado e irá redirecionar o usuário para uma tela onde serão mostrados e filtrados dados da API sobre aquele determinado filme.<br>
+<h3>Tela 6: Tela de filme/série com API</h3>
+<img src="https://i.imgur.com/Qew6li7.png" width="20%">
+Esta é a tela onde o usuário é redirecionado quando clica em algum filme ou na série. Através da API, serão requisitados os dados de cada filme específico e exibidos nesta tela de forma filtrada. Teremos imagens, avaliação do público (de acordo com a API), sinopse, Os dois primeiros nomes responsáveis na produção técnica do filme, um botão para redirecionamento do elenco do filme (que será em outra tela) e uma galeria de fotos. Todos os dados serão fornecidos e trazidos pela API. Esta tela também serve para a série, que terá os mesmos tipos de dados dos filmes.<br>
+<h3>Tela 7: Elenco</h3>
+<img src=https://i.imgur.com/IS0i8zb.png" width="20%">
+Nesta tela o usuário poderá pesquisar por filme o elenco. Na barra de pesquisa, ele irá digitar o nome do filme, dentro da coleção Pânico, que deseja e a API irá procurar dentro desta coleção qual é o nome correto. Após encontrar, será retornado os dados de todo o elenco do longa de uma forma filtrada, com nome, imagens e uma pequena descrição.<br>
+<h3>Tela 8: Ligação</h3>
+<img src="https://i.imgur.com/u9RzPDt.png" width="20%">
+Nesta tela, o usuário pode realizar uma ligação com o Ghostface. Através do botão "Ligar", um áudio pré-gravado irá ser tocado com a voz do assassino.<br>
+<h3>Tela 9: Perfil do usuário</h3>
+<img src="https://i.imgur.com/PbZjShG.png" width="20%">
+Após ter clicado no ícone de personagem no topo superior direito de qualquer tela, o usuário será direcionado para um tela onde serão todos os seus dados de cadastro, que foram armazenados no banco de dados. Ele poderá visualizar estes dados e editá-los, também podendo realizar o encerramento de sua sessão e sendo redirecionado de volta à tela de login. Também, ao lado da foto de personagem, o usuário poderá editar esta foto com um botão que irá o levar para a última tela do app.<br>
+<h3> Tela 10: Escolha de personagem</h3>
+<img src="https://i.imgur.com/3ItCqVr.png" width="20%">
+Quando o botão de edição de personagem for clicado, o usuário vai cair nesta tela. Aqui ele poderá realizar uma alteração com informações pré-armazenadas no banco de dados, onde estarão o nome do personagem e sua foto. É disponibilizado uma lista com alguns personagens presentes em filmes da franquia. Ao alterar seu personagem, esta escolha será salva e ficará como destaque ao invés da anterior. 
