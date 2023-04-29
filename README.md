@@ -10,6 +10,7 @@
 Utilizando a API do <i>The Movie Database (TMDB)</i><br>
 <img src="https://cdn-icons-png.flaticon.com/512/252/252006.png" width="15px"/> <b>URL da documentação:</b> https://developers.themoviedb.org/3/getting-started/introduction<br>
 <img src="https://cdn-icons-png.flaticon.com/512/252/252006.png" width="15px"/> <b>URL de acesso a API:</b> https://api.themoviedb.org/3/
+<img src="https://cdn-icons-png.flaticon.com/512/252/252006.png" width="15px"/> <b>URL do protótipo animado do APP:</b> https://www.figma.com/file/82PaR9kVLWMk2obII3g2Qx/APP-P%C3%A2nico?node-id=0%3A1&t=ivJgoLQBdOvn5ADG-1
 
 <b><h2>Métodos e dados de autenticação:</h2></b>
 GET: /authentication/guest_session/new - Método utilizado para criar uma nova sessão de convidado. Sessões de convidados deixam o usuário dar notas para filmes e séries sem ter uma conta.<br>
