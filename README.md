@@ -531,3 +531,10 @@ Após ter clicado no ícone de personagem no topo superior direito de qualquer t
 <h3> Tela 10: Escolha de personagem</h3>
 <img src="https://i.imgur.com/3ItCqVr.png" width="20%">
 Quando o botão de edição de personagem for clicado, o usuário vai cair nesta tela. Aqui ele poderá realizar uma alteração com informações pré-armazenadas no banco de dados, onde estarão o nome do personagem e sua foto. É disponibilizado uma lista com alguns personagens presentes em filmes da franquia. Ao alterar seu personagem, esta escolha será salva e ficará como destaque ao invés da anterior. 
+___
+
+<b><h2>Diagrama de Banco de Dados Interno do APP</h2></b>
+<img src="https://i.imgur.com/sgl6JZc.png" width="40%">
+
+<b><h2>Diagrama de Classes do APP</h2></b>
+<img src="https://i.imgur.com/GPjt4Fx.png" width="40%">
