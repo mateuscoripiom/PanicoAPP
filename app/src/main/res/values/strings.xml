@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">APPScream</string>
     <string name="bemvindos">Bem-Vindo a Woodsboro</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="scream">SCREAM</string>
+    <string name="cadastro">Não entre em PÂNICO. Se cadastre agora.</string>
+    <string name="nome">Nome</string>
+    <string name="personagem">Escolha seu personagem</string>
 </resources>
