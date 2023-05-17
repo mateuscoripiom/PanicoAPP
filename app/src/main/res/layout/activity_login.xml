@@ -75,7 +75,6 @@
         android:ems="10"
         android:inputType="text|textPassword"
         android:paddingStart="12dp"
-        android:text="@string/senha"
         android:textColor="#92FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/sombrasenha"
         app:layout_constraintEnd_toEndOf="@+id/sombrasenha"

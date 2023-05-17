@@ -1,0 +1,63 @@
+package com.example.appscream;
+
+import static java.security.AccessController.getContext;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
+
+import java.security.AccessControlContext;
+
+public class DatabaseHelper extends SQLiteOpenHelper {
+    private static final String BANCO_DADOS = "BDScream.db";
+    private static int VERSAO = 1;
+
+    public DatabaseHelper(Context context) {
+        super(context, BANCO_DADOS, null, VERSAO);
+    }
+    @Override
+    public void onCreate(SQLiteDatabase MyDB) {
+        MyDB.execSQL("create Table users(username TEXT primary key, email TEXT, password TEXT)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
+        MyDB.execSQL("drop Table if exists users");
+    }
+
+    public Boolean insertData(String username, String password){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put("username", username);
+        contentValues.put("password", password);
+        long result = MyDB.insert("users", null, contentValues);
+        if(result==-1) return false;
+        else
+            return true;
+    }
+
+    public Boolean checkusername(String username) {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from users where username = ?", new String[]{username});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
+    public Boolean checkusernamepassword(String username, String password){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from users where username = ? and password = ?", new String[] {username,password});
+        if(cursor.getCount()>0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+
+}
