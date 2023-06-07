@@ -1,14 +1,18 @@
 package com.example.appscream;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2000);
     }
-
 
     private void mostrarMainActivity() {
         Intent intent = new Intent(

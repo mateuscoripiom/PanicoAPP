@@ -40,7 +40,7 @@ public class Adaptery extends RecyclerView.Adapter<Adaptery.MyViewHolder> {
         holder.name.setText(mData.get(position).getName());
 
         Glide.with(mContext)
-                .load(mData.get(position).getImg())
+                .load("https://image.tmdb.org/t/p/w500"+mData.get(position).getImg())
                 .into(holder.img);
 
     }
