@@ -17,6 +17,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Button btncadastrar = findViewById(R.id.btncadastrar);
+        EditText email = (EditText) findViewById(R.id.editemail);
+        EditText password = (EditText) findViewById(R.id.editsenha);
+        DBhelper DB;
 
         btncadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +35,35 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, HomeActivity.class));
             }
         });
+
+        DB = new DBhelper(this);
+
+        btnscream.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String user = email.getText().toString();
+                String pass = password.getText().toString();
+
+                if(user.equals("") || pass.equals(""))
+                    Toast.makeText(LoginActivity.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+                else{
+                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
+                    if(checkuserpass == true){
+                        Toast.makeText(LoginActivity.this, "Logado com sucesso", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent (getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+
+                    }else {
+                        Toast.makeText(LoginActivity.this, "Credenciais Invalidas", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+
+            }
+        });
     }
 
 
 }
+

@@ -73,6 +73,7 @@
         android:drawableLeft="@drawable/password"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:inputType="text|textPassword"
         android:paddingStart="12dp"
         android:textColor="#92FFFFFF"
