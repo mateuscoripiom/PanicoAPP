@@ -3,6 +3,8 @@ package com.example.appscream;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +23,7 @@ import com.example.appscream.response.CollectionSearchResponse;
 import com.example.appscream.response.MovieSearchResponse;
 import com.example.appscream.utils.Credentials;
 import com.example.appscream.utils.MovieApi;
+import com.example.appscream.viewmodels.MovieListViewModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,22 +46,44 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity {
+
+    Button btnteste;
+    private MovieListViewModel movieListViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button btnteste = findViewById(R.id.btnteste);
+        movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
 
+        ObserveAnyChange();
+
+        btnteste = (Button) findViewById(R.id.btnteste);
         btnteste.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                GetRetrofitReponseAccordingToCollection();
+            public void onClick(View v) {
+                searchMovieApi("Pânico", 1, "pt-BR");
             }
         });
     }
 
+    private void ObserveAnyChange(){
+        movieListViewModel.getMovies().observe(this, new Observer<List<MovieModel>>() {
+            @Override
+            public void onChanged(List<MovieModel> movieModels) {
+                if(movieModels != null){
+                    for(MovieModel movieModel: movieModels){
+                        Log.v("Tag", "onChanged: "+movieModel.getTitle());
+                    }
+                }
+            }
+        });
+    }
 
+    private void searchMovieApi(String query, int pageNumber, String language){
+        movieListViewModel.searchMovieApi(query, pageNumber, language);
+    }
    private void GetRetrofitResponse(){
        MovieApi movieApi = Service.getMovieApi();
 
@@ -97,7 +122,7 @@ public class HomeActivity extends AppCompatActivity {
        });
    }
 
-   private void GetRetrofitReponseAccordingToID(){
+   private void GetRetrofitResponseAccordingToID(){
         MovieApi movieApi = Service.getMovieApi();
         Call<MovieModel> responseCall = movieApi.getMovie(
                 4232,
@@ -128,7 +153,7 @@ public class HomeActivity extends AppCompatActivity {
         });
    }
 
-    private void GetRetrofitReponseAccordingToCollection(){
+    private void GetRetrofitResponseAccordingToCollection(){
         MovieApi movieApi = Service.getMovieApi();
         Call<CollectionSearchResponse> responseCall = movieApi.getCollection(
                 2602,
