@@ -21,6 +21,14 @@ public class CadastroActivity extends AppCompatActivity {
         EditText password = findViewById(R.id.editemailcad);
         EditText repassword = findViewById(R.id.editsenhacad);
 
+        Button btncadastro = findViewById(R.id.btncadastro);
+
+        btncadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(CadastroActivity.this, LoginActivity.class));
+            }
+        });
         DatabaseHelper DB = new DatabaseHelper(this);
 
         cadastrar.setOnClickListener(new View.OnClickListener() {

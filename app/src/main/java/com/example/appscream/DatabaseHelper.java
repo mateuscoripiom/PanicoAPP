@@ -1,18 +1,15 @@
 package com.example.appscream;
 
-import static java.security.AccessController.getContext;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
-
-import java.security.AccessControlContext;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    private static final String BANCO_DADOS = "BDScream.db";
+
+
+    private static final String BANCO_DADOS = "BDBodies.db";
     private static int VERSAO = 1;
 
     public DatabaseHelper(Context context) {
@@ -20,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
-        MyDB.execSQL("create Table users(username TEXT primary key, email TEXT, password TEXT)");
+        MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
     }
 
     @Override
@@ -61,3 +58,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 }
+

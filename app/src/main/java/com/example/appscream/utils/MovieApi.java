@@ -1,5 +1,6 @@
 package com.example.appscream.utils;
 
+import com.example.appscream.models.LogoModel;
 import com.example.appscream.models.MovieModel;
 import com.example.appscream.response.CollectionSearchResponse;
 import com.example.appscream.response.MovieSearchResponse;
@@ -33,4 +34,18 @@ public interface MovieApi {
             @Query("api_key") String api_key,
             @Query("language") String language
     );
+
+    @GET("3/movie/{movie_id}/images?")
+    Call<LogoModel> getLogo(
+            @Path("movie_id") int movie_id,
+            @Query("api_key") String api_key,
+            @Query("include_image_language") String include_image_language
+    );
+
+    @GET("3/movie/{movie_id}/credits?")
+    Call<MovieModel> getCredits(
+            @Path("movie_id") int movie_id,
+            @Query("api_key") String api_key
+    );
+
 }

@@ -3,8 +3,10 @@
     <string name="bemvindos">Bem-Vindo a Woodsboro</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>
+    <string name="confsenha">Confirme a senha</string>
     <string name="scream">SCREAM</string>
     <string name="cadastro">Não entre em PÂNICO. Se cadastre agora.</string>
+    <string name="login">Não entre em PÂNICO. Logue agora.</string>
     <string name="nome">Nome</string>
     <string name="personagem">Escolha seu personagem</string>
     <string name="sidney">Sidney</string>

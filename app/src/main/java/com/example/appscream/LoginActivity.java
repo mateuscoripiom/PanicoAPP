@@ -19,7 +19,6 @@ public class LoginActivity extends AppCompatActivity {
         Button btncadastrar = findViewById(R.id.btncadastrar);
         EditText email = (EditText) findViewById(R.id.editemail);
         EditText password = (EditText) findViewById(R.id.editsenha);
-        DBhelper DB;
 
         btncadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        DB = new DBhelper(this);
+        DatabaseHelper DB = new DatabaseHelper(this);
 
         btnscream.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,9 +50,8 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if(checkuserpass == true){
                         Toast.makeText(LoginActivity.this, "Logado com sucesso", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent (getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent (getApplicationContext(), HomeActivity.class);
                         startActivity(intent);
-
                     }else {
                         Toast.makeText(LoginActivity.this, "Credenciais Invalidas", Toast.LENGTH_SHORT).show();
                     }

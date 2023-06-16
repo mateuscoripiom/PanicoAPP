@@ -10,14 +10,22 @@ public class MovieModel implements Parcelable {
     private String overview;
     private float vote_average;
     private int movie_id;
+    private String logo_path;
+    private String known_for_department;
+    private String original_title;
+    private String name;
 
-    public MovieModel(String title, String poster_path, String backdrop_path, String overview, float vote_average, int movie_id) {
+    public MovieModel(String title, String name, String known_for_department, String original_title, String poster_path, String backdrop_path, String overview, float vote_average, int movie_id, String logo_path) {
         this.title = title;
         this.poster_path = poster_path;
         this.backdrop_path = backdrop_path;
         this.overview = overview;
         this.vote_average = vote_average;
         this.movie_id = movie_id;
+        this.logo_path = logo_path;
+        this.original_title = original_title;
+        this.known_for_department = known_for_department;
+        this.name = name;
     }
 
     protected MovieModel(Parcel in) {
@@ -27,6 +35,10 @@ public class MovieModel implements Parcelable {
         overview = in.readString();
         vote_average = in.readFloat();
         movie_id = in.readInt();
+        logo_path = in.readString();
+        original_title = in.readString();
+        known_for_department = in.readString();
+        name = in.readString();
     }
 
     public static final Creator<MovieModel> CREATOR = new Creator<MovieModel>() {
@@ -64,6 +76,14 @@ public class MovieModel implements Parcelable {
     public int getMovie_id() {
         return movie_id;
     }
+
+    public String getLogo_path() { return logo_path;}
+
+    public String getOriginal_title(){ return original_title;}
+
+    public String getKnown_for_department(){ return known_for_department;}
+
+    public String getName(){ return name;};
     
     @Override
     public int describeContents(){
@@ -72,12 +92,15 @@ public class MovieModel implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i){
-
         parcel.writeString(title);
         parcel.writeString(poster_path);
         parcel.writeString(backdrop_path);
         parcel.writeString(overview);
         parcel.writeFloat(vote_average);
         parcel.writeInt(movie_id);
+        parcel.writeString(logo_path);
+        parcel.writeString(original_title);
+        parcel.writeString(known_for_department);
+        parcel.writeString(name);
     }
 }

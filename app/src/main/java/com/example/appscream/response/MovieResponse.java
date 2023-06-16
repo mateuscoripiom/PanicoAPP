@@ -13,5 +13,4 @@ public class MovieResponse {
     public MovieModel getMovie(){
         return movie;
     }
-
 }
