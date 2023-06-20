@@ -17,4 +17,6 @@
     <string name="seuperso">Seu personagem é</string>
     <string name="tara">Tara</string>
     <string name="dados">Seus Dados</string>
+    <string name="editdados">Editar Dados</string>
+    <string name="deslog">Deslogar</string>
 </resources>

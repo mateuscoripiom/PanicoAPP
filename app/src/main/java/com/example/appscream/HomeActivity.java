@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -218,6 +219,51 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<CollectionSearchResponse> call, Throwable t) {
 
+            }
+        });
+
+        ImageButton imgbtnhome = findViewById(R.id.imgbtnhome);
+
+        imgbtnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, HomeActivity.class));
+            }
+        });
+
+        ImageButton imgbtnfilme = findViewById(R.id.imgbtnfilme);
+
+        imgbtnfilme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
+            }
+        });
+
+        ImageButton imgbtnserie = findViewById(R.id.imgbtnserie);
+
+        imgbtnserie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
+            }
+        });
+
+        ImageButton imgbtnperfil = findViewById(R.id.imgbtnperfil);
+
+        imgbtnperfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, activity_perfil.class));
+            }
+        });
+
+        ImageButton imgbtntelefone = findViewById(R.id.imgbtntelefone);
+
+        imgbtntelefone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, activity_perfil.class));
             }
         });
     }
