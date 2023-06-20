@@ -19,4 +19,6 @@
     <string name="dados">Seus Dados</string>
     <string name="editdados">Editar Dados</string>
     <string name="deslog">Deslogar</string>
+    <string name="ligacao">Receba uma ligação do Ghostface</string>
+    <string name="ligar">Ligar</string>
 </resources>

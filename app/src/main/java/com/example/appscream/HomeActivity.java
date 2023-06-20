@@ -263,7 +263,7 @@ public class HomeActivity extends AppCompatActivity {
         imgbtntelefone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, activity_perfil.class));
+                startActivity(new Intent(HomeActivity.this, Telefone.class));
             }
         });
     }
