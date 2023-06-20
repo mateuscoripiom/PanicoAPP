@@ -159,4 +159,23 @@
         tools:layout_editor_absoluteX="252dp"
         tools:layout_editor_absoluteY="327dp" />
 
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/retdados"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="393dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dados"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="407dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
