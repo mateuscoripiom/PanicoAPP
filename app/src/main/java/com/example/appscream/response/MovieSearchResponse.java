@@ -11,7 +11,7 @@ public class MovieSearchResponse {
     @SerializedName("total_results")
     @Expose()
     private int total_count;
-    
+
     @SerializedName("results")
     @Expose()
     private List<MovieModel> movies;

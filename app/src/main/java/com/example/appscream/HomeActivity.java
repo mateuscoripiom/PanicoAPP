@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Movie;
@@ -52,12 +53,24 @@ public class HomeActivity extends AppCompatActivity {
 
     ImageView imgpanico1, imgpanico2, imgpanico3, imgpanico4, imgpanico5, imgpanico6;
 
+    Button btnteste;
+
     public static Integer ID = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
+        btnteste = (Button)findViewById(R.id.btnteste1);
+        btnteste.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, FranquiaActivity.class));
+
+            }
+        });
 
         imgpanico1 = (ImageView) findViewById(R.id.imgpanico1);
         imgpanico1.setOnClickListener(new View.OnClickListener(){

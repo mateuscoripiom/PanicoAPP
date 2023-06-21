@@ -29,7 +29,7 @@ public class Adaptery extends RecyclerView.Adapter<Adaptery.MyViewHolder> {
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        v = inflater.inflate(R.layout.activity_filme, parent, false);
+        v = inflater.inflate(R.layout.activity_movie, parent, false);
 
         return new MyViewHolder(v);
     }
@@ -59,9 +59,9 @@ public class Adaptery extends RecyclerView.Adapter<Adaptery.MyViewHolder> {
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            id = itemView.findViewById(R.id.txtidf);
-            name = itemView.findViewById(R.id.txtnomef);
-            img = itemView.findViewById(R.id.imgfilmef);
+            id = itemView.findViewById(R.id.idtxt);
+            name = itemView.findViewById(R.id.nametxt);
+            img = itemView.findViewById(R.id.imgteste);
         }
     }
 }

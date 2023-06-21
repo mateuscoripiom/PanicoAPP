@@ -139,9 +139,6 @@ public class FilmeActivity extends AppCompatActivity {
         Call<MovieModel> responseCall = movieApi.getCredits(
                 HomeActivity.ID,
                 Credentials.API_KEY);
-
-        btndirecao = (Button)findViewById(R.id.btndirecao);
-        txtdirecao = (TextView)findViewById(R.id.txtdirecao);
         responseCall.enqueue(new Callback<MovieModel>() {
             @Override
             public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
