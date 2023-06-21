@@ -46,8 +46,8 @@ public class CadastroActivity extends AppCompatActivity {
                         if (checkuser == false) {
                             Boolean insert = DB.insertData(user, pass);
                             if (insert == true) {
-                                Toast.makeText(CadastroActivity.this, "Usuário cadastrado com sucesso.", Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(getApplicationContext(), PersonagensActivity.class);
+                                Toast.makeText(CadastroActivity.this, "Usuário cadastrado com sucesso. Por favor, logue-se.", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(CadastroActivity.this, "Cadastro não foi bem sucedido.", Toast.LENGTH_SHORT).show();

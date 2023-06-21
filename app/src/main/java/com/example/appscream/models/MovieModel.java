@@ -14,8 +14,9 @@ public class MovieModel implements Parcelable {
     private String known_for_department;
     private String original_title;
     private String name;
+    private String series_id;
 
-    public MovieModel(String title, String name, String known_for_department, String original_title, String poster_path, String backdrop_path, String overview, float vote_average, int movie_id, String logo_path) {
+    public MovieModel(String title, String series_id, String name, String known_for_department, String original_title, String poster_path, String backdrop_path, String overview, float vote_average, int movie_id, String logo_path) {
         this.title = title;
         this.poster_path = poster_path;
         this.backdrop_path = backdrop_path;
@@ -26,6 +27,7 @@ public class MovieModel implements Parcelable {
         this.original_title = original_title;
         this.known_for_department = known_for_department;
         this.name = name;
+        this.series_id = series_id;
     }
 
     protected MovieModel(Parcel in) {
@@ -39,6 +41,7 @@ public class MovieModel implements Parcelable {
         original_title = in.readString();
         known_for_department = in.readString();
         name = in.readString();
+        series_id = in.readString();
     }
 
     public static final Creator<MovieModel> CREATOR = new Creator<MovieModel>() {
@@ -84,6 +87,8 @@ public class MovieModel implements Parcelable {
     public String getKnown_for_department(){ return known_for_department;}
 
     public String getName(){ return name;};
+
+    public String getSeries_id(){ return series_id;}
     
     @Override
     public int describeContents(){
@@ -102,5 +107,6 @@ public class MovieModel implements Parcelable {
         parcel.writeString(original_title);
         parcel.writeString(known_for_department);
         parcel.writeString(name);
+        parcel.writeString(series_id);
     }
 }

@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1E1E1E"
-    tools:context=".FilmeActivity">
-
+    tools:context=".SerieActivity">
 
     <ImageView
-        android:id="@+id/imageView34"
+        android:id="@+id/imageView36"
         android:layout_width="407dp"
         android:layout_height="70dp"
         android:layout_marginBottom="-10dp"
@@ -19,18 +18,18 @@
         app:srcCompat="@drawable/navbar" />
 
     <ImageButton
-        android:id="@+id/imgbtnserie4"
+        android:id="@+id/imgbtnserie5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@null"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtntelefone4"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnhome4"
-        app:layout_constraintTop_toTopOf="@+id/imageView34"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtntelefone5"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnhome5"
+        app:layout_constraintTop_toTopOf="@+id/imageView36"
         app:srcCompat="@drawable/tvicon" />
 
     <ImageView
-        android:id="@+id/imageView21"
+        android:id="@+id/imageView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -40,7 +39,7 @@
         app:srcCompat="@drawable/logopanico" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -58,7 +57,7 @@
         app:contentPadding="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView21">
+        app:layout_constraintTop_toBottomOf="@+id/imageView37">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -71,35 +70,34 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
     <ImageButton
-        android:id="@+id/imgbtnhome4"
+        android:id="@+id/imgbtnhome5"
         android:layout_width="63dp"
         android:layout_height="49dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="8dp"
         android:background="@null"
-        app:layout_constraintStart_toStartOf="@+id/imageView34"
-        app:layout_constraintTop_toTopOf="@+id/imageView34"
+        app:layout_constraintStart_toStartOf="@+id/imageView36"
+        app:layout_constraintTop_toTopOf="@+id/imageView36"
         app:srcCompat="@drawable/casa" />
 
     <ImageView
-        android:id="@+id/imgbtnvoltar4"
+        android:id="@+id/imgbtnvoltar5"
         android:layout_width="38dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView21"
+        app:layout_constraintEnd_toStartOf="@+id/imageView37"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/setaes" />
 
     <ImageView
-        android:id="@+id/imglogo"
+        android:id="@+id/imglogo3"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="210dp"
@@ -110,11 +108,11 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/txtnomef"
+        android:id="@+id/txtnomef2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:fontFamily="@font/poppins"
         android:textAlignment="center"
@@ -123,29 +121,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtidf" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <ImageButton
-        android:id="@+id/imgbtntelefone4"
+        android:id="@+id/imgbtntelefone5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="84dp"
         android:background="@null"
-        app:layout_constraintEnd_toEndOf="@+id/imageView34"
-        app:layout_constraintTop_toTopOf="@+id/imageView34"
+        app:layout_constraintEnd_toEndOf="@+id/imageView36"
+        app:layout_constraintTop_toTopOf="@+id/imageView36"
         app:srcCompat="@drawable/telefoneicon" />
-
-    <TextView
-        android:id="@+id/txtidf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#00FFFFFF"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

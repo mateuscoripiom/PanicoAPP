@@ -2,9 +2,12 @@ package com.example.appscream;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,20 +34,21 @@ import retrofit2.Response;
 public class FilmeActivity extends AppCompatActivity {
 
     TextView txtidf, txtnomef,txtdirecao;
-    ImageView imgfilmef, imglogo;
-
-    Button btndirecao;
-
-
+    ImageView imgfilmef, imglogo, imgbtnvoltar;
+    ImageButton imgbtnhome, imgbtnfilme, imgbtnserie, imgbtnper, imgbtntelefone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filme);
 
+        imgbtnhome = findViewById(R.id.imgbtnhome4);
+        imgbtnserie = findViewById(R.id.imgbtnserie4);
+        imgbtntelefone = findViewById(R.id.imgbtntelefone4);
+        imgbtnvoltar = findViewById(R.id.imgbtnvoltar4);
+
         if(HomeActivity.ID != null){
             GetRetrofitResponseAccordingToID();
-            GetRetrofitResponseCredits();
         }
 
         if(HomeActivity.ID == 4232){
@@ -94,6 +98,32 @@ public class FilmeActivity extends AppCompatActivity {
                     .load("https://assets.fanart.tv/fanart/movies/934433/hdmovielogo/scream-vi-639a1857505bc.png")
                     .into(imglogo);
         }
+        imgbtnhome.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(FilmeActivity.this, HomeActivity.class));
+            }
+        });
+        imgbtnserie.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(FilmeActivity.this, SerieActivity.class));
+            }
+
+        });
+        imgbtntelefone.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(FilmeActivity.this, Telefone.class));
+            }
+
+        });
+        imgbtnvoltar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(FilmeActivity.this, HomeActivity.class));
+            }
+        });
     }
 
     private void GetRetrofitResponseAccordingToID(){
@@ -110,13 +140,14 @@ public class FilmeActivity extends AppCompatActivity {
             public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
                 if(response.code() == 200){
                     MovieModel movie = response.body();
-                    Log.v("Tag", "The Response" + movie.getTitle() + movie.getOverview() + movie.getPoster_path());
+                    Log.v("Tag", "The Response" + movie.getTitle() + movie.getOverview() + movie.getBackdrop_path());
                     txtidf.setText(movie.getTitle());
                     txtnomef.setText(movie.getOverview());
                     Picasso
                             .get()
-                            .load("https://www.themoviedb.org/t/p/original/" + movie.getBackdrop_path())
+                            .load("https://image.tmdb.org/t/p/w500/" + movie.getBackdrop_path())
                             .into(imgfilmef);
+                    Log.v("IMAGEM", movie.getBackdrop_path());
                 }
                 else{
                     try{

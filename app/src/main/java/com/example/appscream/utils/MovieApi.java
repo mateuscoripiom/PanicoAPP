@@ -17,8 +17,7 @@ public interface MovieApi {
     Call<MovieSearchResponse> searchMovie(
             @Query("api_key") String key,
             @Query("query") String query,
-            @Query("page") int page,
-            @Query("language") String language
+            int pageNumber, @Query("language") String language
     );
 
     @GET("3/movie/{movie_id}?")
@@ -46,6 +45,13 @@ public interface MovieApi {
     Call<MovieModel> getCredits(
             @Path("movie_id") int movie_id,
             @Query("api_key") String api_key
+    );
+
+    @GET("3/tv/{series_id}?")
+    Call<MovieModel> getSeries(
+            @Path("series_id") int series_id,
+            @Query("api_key") String api_key,
+            @Query("language") String language
     );
 
 }

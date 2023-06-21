@@ -4,16 +4,12 @@ import com.example.appscream.models.MovieModel;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-// Classe para para um request de um único filme
-public class MovieResponse {
+public class SeriesResponse {
     @SerializedName("results")
     @Expose
     private MovieModel movie;
 
-    public MovieModel getMovie(){
-
+    public MovieModel getSeries(){
         return movie;
     }
-
-
 }

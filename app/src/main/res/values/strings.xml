@@ -21,4 +21,7 @@
     <string name="deslog">Deslogar</string>
     <string name="ligacao">Receba uma ligação do Ghostface</string>
     <string name="ligar">Ligar</string>
+    <string name="pesquisa">Utilize a API para pesquisar\n outros filmes</string>
+    <string name="digite">Digite o nome</string>
+    <string name="busque">BUSCAR</string>
 </resources>

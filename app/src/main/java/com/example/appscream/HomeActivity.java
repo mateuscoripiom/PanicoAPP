@@ -52,8 +52,7 @@ import retrofit2.Response;
 public class HomeActivity extends AppCompatActivity {
 
     ImageView imgpanico1, imgpanico2, imgpanico3, imgpanico4, imgpanico5, imgpanico6;
-
-    Button btnteste;
+    ImageButton imgbtnhome, imgbtnfilme, imgbtnserie, imgbtnper, imgbtntelefone;
 
     public static Integer ID = null;
 
@@ -62,14 +61,32 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        imgbtnhome = findViewById(R.id.imgbtnhomeinicial);
+        imgbtnserie = findViewById(R.id.imgbtnserieinicial);
+        imgbtntelefone = findViewById(R.id.imgbtntelefoneinicial);
 
-        btnteste = (Button)findViewById(R.id.btnteste1);
-        btnteste.setOnClickListener(new View.OnClickListener(){
+        imgbtnhome.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, FranquiaActivity.class));
-
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, HomeActivity.class));
             }
+        });
+
+
+        imgbtnserie.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, SerieActivity.class));
+            }
+
+        });
+
+        imgbtntelefone.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, Telefone.class));
+            }
+
         });
 
         imgpanico1 = (ImageView) findViewById(R.id.imgpanico1);
@@ -235,7 +252,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton imgbtnhome = findViewById(R.id.imgbtnhome);
+        ImageButton imgbtnhome = findViewById(R.id.imgbtnhomeinicial);
 
         imgbtnhome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -244,34 +261,16 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton imgbtnfilme = findViewById(R.id.imgbtnfilme);
-
-        imgbtnfilme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
-            }
-        });
-
-        ImageButton imgbtnserie = findViewById(R.id.imgbtnserie);
+        ImageButton imgbtnserie = findViewById(R.id.imgbtnserieinicial);
 
         imgbtnserie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
+                startActivity(new Intent(HomeActivity.this, SerieActivity.class));
             }
         });
 
-        ImageButton imgbtnperfil = findViewById(R.id.imgbtnperfil);
-
-        imgbtnperfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, activity_perfil.class));
-            }
-        });
-
-        ImageButton imgbtntelefone = findViewById(R.id.imgbtntelefone);
+        ImageButton imgbtntelefone = findViewById(R.id.imgbtntelefoneinicial);
 
         imgbtntelefone.setOnClickListener(new View.OnClickListener() {
             @Override
