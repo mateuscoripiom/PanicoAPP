@@ -7,7 +7,7 @@
 <b>Dupla realizadora:  Mateus Coripio e Yasmim Borges<br>
 3º DS ETIM - PAM (Profª. Aline Firmino Brito)</b>
 
-<b>Link para o vídeo de demonstração do APP:</b> https://youtu.be/0MqWcx03w_s
+<b>Link para o vídeo de demonstração do APP:</b> https://youtu.be/hL23QKsqOMg
 
 Utilizando a API do <i>The Movie Database (TMDB)</i><br>
 <img src="https://cdn-icons-png.flaticon.com/512/252/252006.png" width="15px"/> <b>URL da documentação:</b> https://developers.themoviedb.org/3/getting-started/introduction<br>
