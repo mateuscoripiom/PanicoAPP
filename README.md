@@ -540,3 +540,7 @@ ___
 
 <b><h2>Diagrama de Classes do APP</h2></b>
 <img src="https://i.imgur.com/GPjt4Fx.png" width="40%">
+
+<br>
+<b><h3>Diagrama de Entidade Relacionamento - API</h3></b>
+<img src="https://i.imgur.com/sbxpzCY.png" width="20%">
