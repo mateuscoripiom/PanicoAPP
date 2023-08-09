@@ -544,3 +544,5 @@ ___
 <br>
 <b><h3>Diagrama de Entidade Relacionamento - API</h3></b>
 <img src="https://images2.imgbox.com/00/00/UrNYlcyu_o.png" width="40%">
+
+<a href="https://imgbox.com/njVKhQSn" target="_blank"><img src="https://images2.imgbox.com/3c/63/njVKhQSn_o.png" alt="image host"/></a>
