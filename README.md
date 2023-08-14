@@ -547,4 +547,4 @@ ___
 
 <br>
 <b><h3>Diagrama de Classes - API</h3></b>
-<img src="https://images2.imgbox.com/00/00/UrNYlcyu_o.png)" width="40%">
+<img src="https://images2.imgbox.com/00/00/UrNYlcyu_o.png" width="40%">
