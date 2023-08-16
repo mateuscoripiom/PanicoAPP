@@ -546,3 +546,6 @@ ___
 
 <b><h2>Diagrama de Classes - API</h2></b>
 <img src="https://images2.imgbox.com/c0/27/Q1YcRDRC_o.jpg" width="40%">
+
+<b><h2>Diagrama do Banco de Dados - API</h2></b>
+<img src="https://images2.imgbox.com/66/ae/lyt31W1O_o.png" width="40%">
