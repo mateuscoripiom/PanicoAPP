@@ -530,9 +530,6 @@ Nesta tela, o usuário pode realizar uma ligação com o Ghostface. Através do 
 <h3>Tela 9: Perfil do usuário</h3>
 <img src="https://i.imgur.com/PbZjShG.png" width="20%">
 Após ter clicado no ícone de personagem no topo superior direito de qualquer tela, o usuário será direcionado para um tela onde serão todos os seus dados de cadastro, que foram armazenados no banco de dados. Ele poderá visualizar estes dados e editá-los, também podendo realizar o encerramento de sua sessão e sendo redirecionado de volta à tela de login. Também, ao lado da foto de personagem, o usuário poderá editar esta foto com um botão que irá o levar para a última tela do app.<br>
-<h3> Tela 10: Escolha de personagem</h3>
-<img src="https://i.imgur.com/3ItCqVr.png" width="20%">
-Quando o botão de edição de personagem for clicado, o usuário vai cair nesta tela. Aqui ele poderá realizar uma alteração com informações pré-armazenadas no banco de dados, onde estarão o nome do personagem e sua foto. É disponibilizado uma lista com alguns personagens presentes em filmes da franquia. Ao alterar seu personagem, esta escolha será salva e ficará como destaque ao invés da anterior. 
 ___
 
 <b><h2>Diagrama de Banco de Dados Interno do APP</h2></b>
