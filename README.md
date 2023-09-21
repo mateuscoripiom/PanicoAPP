@@ -548,3 +548,28 @@ ___
 
 <b><h2>Diagrama do Banco de Dados - API</h2></b>
 <img src="https://images2.imgbox.com/66/ae/lyt31W1O_o.png" width="40%">
+
+<b><h1>Novas Atualizações: API</h1></b>
+
+<b><h3>LOGIN E CADASTRO</h3><b>
+<p>Login e cadastro atualizados para funcionar de acordo com a API, utilizando os métodos GET e POST para trazer e colocar dados na API./<p><br>
+___
+
+<b><h3>NAVBAR</h3><b>
+<p>Foram removidos os botões de filmes e seriado, pois seriam coisas duplicadas que já estõa na tela inicial, e foi adicionado duas novas telas: Atores e Personagens.</p><br>
+___
+
+<b><h3>TELA INICIAL</h3><b>
+<p>Utilização de uma recyclerview para trazer todos os filmes contidos na tabela Obras da API, para mostrar o poster e o ID.</p><br>
+___
+
+<b><h3>TELA DE OBRAS</h3><b>
+<p>Só é possível acessá-la de acordo com a escolha e Obra que o usuário realizou na tela inicial, utilizando uma recyclerview para trazer os detalhes da tabela Obras na API</p><br>
+___
+
+<b><h3>TELA DE ATORES</h3><b>
+<p>Utilização de uma recyclerview para trazer todos o elenco contidos da tabela Atores da API, para mostrar imagem, nome e descrição dos atores.</p>
+___
+
+<b><h3>TELA DE PERSONAGENS</h3><b>
+<p>Utilização de uma recyclerview para trazer todos os personagens contidos da tabela Personagens da API, para mostrar imagem, nome e descrição dos Personagens.</p>
