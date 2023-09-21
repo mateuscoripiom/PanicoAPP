@@ -1,17 +1,23 @@
 package com.example.appscream;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Movie;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,13 +27,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.appscream.models.MovieModel;
-import com.example.appscream.request.Service;
-import com.example.appscream.response.CollectionSearchResponse;
-import com.example.appscream.response.MovieSearchResponse;
-import com.example.appscream.utils.Credentials;
-import com.example.appscream.utils.MovieApi;
-import com.example.appscream.viewmodels.MovieListViewModel;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,12 +49,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
-    ImageView imgpanico1, imgpanico2, imgpanico3, imgpanico4, imgpanico5, imgpanico6;
-    ImageButton imgbtnhome, imgbtnfilme, imgbtnserie, imgbtnper, imgbtntelefone;
+    ImageButton imgbtnhome, imgbtnatores, imgbtnp, imgbtntelefone;
 
-    public static Integer ID = null;
+    //public static Integer ID = null;
+
+    public static List<Item> items = new ArrayList<>();
+
+    public static String ID = null;
+    public static RecyclerView recyclerView;
+
+    public static String IDPosition;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +69,11 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         imgbtnhome = findViewById(R.id.imgbtnhomeinicial);
-        imgbtnserie = findViewById(R.id.imgbtnserieinicial);
+        imgbtnatores = findViewById(R.id.imgbtnatoresinicial);
+        imgbtnp = findViewById(R.id.imgbtnpinicial);
         imgbtntelefone = findViewById(R.id.imgbtntelefoneinicial);
+
+        buscaIDFilme();
 
         imgbtnhome.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -73,10 +83,17 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        imgbtnserie.setOnClickListener(new View.OnClickListener(){
+        imgbtnatores.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, SerieActivity.class));
+                startActivity(new Intent(HomeActivity.this, AtoresActivity.class));
+            }
+
+        });
+        imgbtnp.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(HomeActivity.this, PersonagensActivity.class));
             }
 
         });
@@ -88,195 +105,95 @@ public class HomeActivity extends AppCompatActivity {
             }
 
         });
-
-        imgpanico1 = (ImageView) findViewById(R.id.imgpanico1);
-        imgpanico1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                ID = 4232;
-                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
-
-            }
-        });
-
-        imgpanico2 = (ImageView) findViewById(R.id.imgpanico2);
-        imgpanico2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                ID = 4233;
-                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
-
-            }
-        });
-
-        imgpanico3 = (ImageView) findViewById(R.id.imgpanico3);
-        imgpanico3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                ID = 4234;
-                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
-
-            }
-        });
-
-        imgpanico4 = (ImageView) findViewById(R.id.imgpanico4);
-        imgpanico4.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                ID = 41446;
-                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
-
-            }
-        });
-
-        imgpanico5 = (ImageView) findViewById(R.id.imgpanico5);
-        imgpanico5.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                ID = 646385;
-                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
-
-            }
-        });
-
-        imgpanico6 = (ImageView) findViewById(R.id.imgpanico6);
-        imgpanico6.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                ID = 934433;
-                startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
-
-            }
-        });
     }
 
-   private void GetRetrofitResponse(){
-       MovieApi movieApi = Service.getMovieApi();
 
-       Call<MovieSearchResponse> responseCall = movieApi
-               .searchMovie(
-                       Credentials.API_KEY,
-                       "Pânico",
-                       1,
-                       "pt-BR"
-                       );
-
-       responseCall.enqueue(new Callback<MovieSearchResponse>() {
-           @Override
-           public void onResponse(Call<MovieSearchResponse> call, Response<MovieSearchResponse> response) {
-               if(response.code() == 200){
-                   Log.v("Tag", "the response" + response.body().toString());
-                   List<MovieModel> movies = new ArrayList<>(response.body().getMovies());
-
-                   for(MovieModel movie: movies){
-                       Log.v("Tag", "The title" + movie.getTitle());
-                   }
-               }
-               else{
-                   try{
-                       Log.v("Tag", "Error" + response.errorBody().string());
-                   } catch (IOException e){
-                       e.printStackTrace();
-                   }
-               }
-           }
-
-           @Override
-           public void onFailure(Call<MovieSearchResponse> call, Throwable t) {
-                t.printStackTrace();
-           }
-       });
-   }
-
-   private void GetRetrofitResponseAccordingToID(){
-        MovieApi movieApi = Service.getMovieApi();
-        Call<MovieModel> responseCall = movieApi.getMovie(
-                ID,
-                Credentials.API_KEY,
-                "pt-BR");
-
-        responseCall.enqueue(new Callback<MovieModel>() {
-            @Override
-            public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
-                if(response.code() == 200){
-                    MovieModel movie = response.body();
-                    Log.v("Tag", "The Response" + movie.getTitle() + movie.getOverview());
-
-                }
-                else{
-                    try{
-                        Log.v("Tag", "Error" + response.errorBody().string());
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MovieModel> call, Throwable t) {
-
-            }
-        });
-   }
-
-    private void GetRetrofitResponseAccordingToCollection(){
-        MovieApi movieApi = Service.getMovieApi();
-        Call<CollectionSearchResponse> responseCall = movieApi.getCollection(
-                2602,
-                Credentials.API_KEY,
-                "pt-BR");
-
-        responseCall.enqueue(new Callback<CollectionSearchResponse>() {
-            @Override
-            public void onResponse(Call<CollectionSearchResponse> call, Response<CollectionSearchResponse> response) {
-                if(response.code() == 200){
-                    Log.v("Tag", "the response" + response.body().toString());
-                    List<MovieModel> movies = new ArrayList<>(response.body().getCollection());
-
-                    for(MovieModel movie: movies){
-                        Log.v("Tag", "The title" + movie.getTitle());
-                    }
-                }
-                else{
-                    try{
-                        Log.v("Tag", "Error" + response.errorBody().string());
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<CollectionSearchResponse> call, Throwable t) {
-
-            }
-        });
-
-        ImageButton imgbtnhome = findViewById(R.id.imgbtnhomeinicial);
-
-        imgbtnhome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, HomeActivity.class));
-            }
-        });
-
-        ImageButton imgbtnserie = findViewById(R.id.imgbtnserieinicial);
-
-        imgbtnserie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, SerieActivity.class));
-            }
-        });
-
-        ImageButton imgbtntelefone = findViewById(R.id.imgbtntelefoneinicial);
-
-        imgbtntelefone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(HomeActivity.this, Telefone.class));
-            }
-        });
+    public void buscaIDFilme() {
+        // Recupera a string de busca.
+        String movieString = null;
+        // Verifica o status da conexão de rede
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = null;
+        if (connMgr != null) {
+            networkInfo = connMgr.getActiveNetworkInfo();
+        }
+        /* Se a rede estiver disponivel e o campo de busca não estiver vazio
+         iniciar o Loader CarregaLivros */
+        if (networkInfo != null && networkInfo.isConnected()) {
+            Bundle queryBundle = new Bundle();
+            queryBundle.putString("movieString", movieString);
+            getSupportLoaderManager().restartLoader(0, queryBundle, this);
+        }
+        // atualiza a textview para informar que não há conexão ou termo de busca
+        else {
+                Toast.makeText(HomeActivity.this, "Verifique a conexão", Toast.LENGTH_SHORT).show();
+        }
     }
+    @NonNull
+    @Override
+    public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
+        return new CarregaObra(this);
+    }
+    @Override
+    public void onLoadFinished(@NonNull Loader<String> loader, String data) {
+        try {
+            // Converte a resposta em Json
+            JSONObject jsonObject = new JSONObject(data);
+            // Toast.makeText(this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
+            // Obtem o JSONArray dos itens de livros
+            // JSONArray itemsArray = jsonObject.getJSONArray("genres");
+            // Toast.makeText(this, itemsArray.toString(), Toast.LENGTH_SHORT).show();
+            // inicializa o contador
+            int i = 0;
+            String idObra = null;
+            String imgposter = null;
+            // Procura pro resultados nos itens do array
+            while (i < jsonObject.length()) {
+                // Obtem a informação
+                Object ido = jsonObject.get("idObra"); // pega o title no object json
+                Object poster = jsonObject.get("imagemPoster");
+
+                // Toast.makeText(this, "MOVIE:" + title, Toast.LENGTH_SHORT).show();
+                //  Obter autor e titulo para o item,
+                // erro se o campo estiver vazio
+                try {
+                    idObra = ido.toString();
+                    imgposter = poster.toString();
+
+                    items.add(new Item(idObra, imgposter));
+
+                    RecyclerView recyclerView = findViewById(R.id.recyclerView);
+
+                    LinearLayoutManager horizontalLayoutManager = new LinearLayoutManager(HomeActivity.this, LinearLayoutManager.HORIZONTAL,false);
+                    recyclerView.setLayoutManager(horizontalLayoutManager);
+                    recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));
+
+                    recyclerView.addOnItemTouchListener(
+                            new RecyclerItemClickListener(getApplicationContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                                @Override public void onItemClick(View view, int position) {
+                                    IDPosition = items.get(position).getIdpop();
+                                    startActivity(new Intent(HomeActivity.this, FilmeActivity.class));
+                                }
+
+                                @Override public void onLongItemClick(View view, int position) {
+                                    // do whatever
+                                }
+                            })
+                    );
+                } catch (Exception err) {
+                    err.printStackTrace();
+                }
+                i++;
+            }
+        } catch (Exception e) {
+            // Se não receber um JSOn valido, informa ao usuário
+            Toast.makeText(HomeActivity.this, "JSON inválido", Toast.LENGTH_SHORT).show();
+        }
+    }
+    @Override
+    public void onLoaderReset(@NonNull Loader<String> loader) {
+        // obrigatório implementar, nenhuma ação executada
+    }
+
 }

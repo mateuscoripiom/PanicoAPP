@@ -9,9 +9,10 @@
 
 
     <ImageView
-        android:id="@+id/imageView34"
+        android:id="@+id/imgfundo3"
         android:layout_width="407dp"
         android:layout_height="70dp"
+
         android:layout_marginBottom="-10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,15 +20,52 @@
         app:srcCompat="@drawable/navbar" />
 
     <ImageButton
-        android:id="@+id/imgbtnserie4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:id="@+id/imgbtnhomeinicial3"
+        android:layout_width="63dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
         android:background="@null"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtntelefone4"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnhome4"
-        app:layout_constraintTop_toTopOf="@+id/imageView34"
-        app:srcCompat="@drawable/tvicon" />
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnatoresinicial3"
+        app:layout_constraintStart_toStartOf="@+id/imgfundo3"
+        app:layout_constraintTop_toTopOf="@+id/imgfundo3"
+        app:srcCompat="@drawable/casa" />
+
+    <ImageButton
+        android:id="@+id/imgbtnatoresinicial3"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        android:importantForAutofill="auto"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnpinicial3"
+        app:layout_constraintTop_toTopOf="@+id/imgfundo3"
+        app:srcCompat="@drawable/icons8_atores_30" />
+
+    <ImageButton
+        android:id="@+id/imgbtnpinicial3"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        android:importantForAutofill="auto"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtntelefoneinicial3"
+        app:layout_constraintTop_toTopOf="@+id/imgfundo3"
+        app:srcCompat="@drawable/icons8_pessoa_30" />
+
+    <ImageButton
+        android:id="@+id/imgbtntelefoneinicial3"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="60dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="@+id/imgfundo3"
+        app:layout_constraintTop_toTopOf="@+id/imgfundo3"
+        app:srcCompat="@drawable/telefoneicon" />
 
     <ImageView
         android:id="@+id/imageView21"
@@ -46,11 +84,53 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="325dp" />
 
+    <TextView
+        android:id="@+id/txtnomef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:elevation="13dp"
+        android:fontFamily="@font/scream"
+        android:text="@string/scream"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/txtavaliacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="74"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="70dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#970000"
+        android:elevation="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:outlineProvider="none"
         app:cardBackgroundColor="#00FFFFFF"
         app:cardCornerRadius="15dp"
         app:cardPreventCornerOverlap="false"
@@ -68,25 +148,19 @@
                 android:id="@+id/imgfilmef"
                 android:layout_width="384dp"
                 android:layout_height="216dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 tools:srcCompat="@tools:sample/avatars" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <ImageButton
-        android:id="@+id/imgbtnhome4"
-        android:layout_width="63dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="8dp"
-        android:background="@null"
-        app:layout_constraintStart_toStartOf="@+id/imageView34"
-        app:layout_constraintTop_toTopOf="@+id/imageView34"
-        app:srcCompat="@drawable/casa" />
 
     <ImageView
         android:id="@+id/imgbtnvoltar4"
@@ -98,54 +172,79 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/setaes" />
 
-    <ImageView
-        android:id="@+id/imglogo"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="210dp"
-        android:elevation="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <TextView
-        android:id="@+id/txtnomef"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="30dp"
-        android:fontFamily="@font/poppins"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtidf" />
-
-    <ImageButton
-        android:id="@+id/imgbtntelefone4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="84dp"
-        android:background="@null"
-        app:layout_constraintEnd_toEndOf="@+id/imageView34"
-        app:layout_constraintTop_toTopOf="@+id/imageView34"
-        app:srcCompat="@drawable/telefoneicon" />
-
-    <TextView
-        android:id="@+id/txtidf"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtsinopse"
+        android:layout_width="358dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="#00FFFFFF"
+        android:fontFamily="@font/poppins"
+        android:text="@string/tara"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#50636363"
+        android:fontFamily="@font/poppins"
+        android:text="Ano: "
+        android:textAlignment="textStart"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtsinopse" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#50636363"
+        android:fontFamily="@font/poppins"
+        android:text="Direção:"
+        android:textAlignment="textStart"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#50636363"
+        android:fontFamily="@font/poppins"
+        android:text="@string/conheca"
+        android:textAlignment="textStart"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/icons8_seta_longa___direita_100"
+        app:iconGravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#50636363"
+        android:fontFamily="@font/poppins"
+        android:text="@string/conhecaelenco"
+        android:textAlignment="textStart"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/icons8_seta_longa___direita_100"
+        app:iconGravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

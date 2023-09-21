@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E1E"
+    tools:context=".AtoresActivity">
+
+    <ImageView
+        android:id="@+id/imgfundo2"
+        android:layout_width="407dp"
+        android:layout_height="70dp"
+
+        android:layout_marginBottom="-10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/navbar" />
+
+    <ImageButton
+        android:id="@+id/imgbtnhomeinicial2"
+        android:layout_width="63dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnatoresinicial2"
+        app:layout_constraintStart_toStartOf="@+id/imgfundo3"
+        app:layout_constraintTop_toTopOf="@+id/imgfundo2"
+        app:srcCompat="@drawable/casa" />
+
+    <ImageButton
+        android:id="@+id/imgbtnatoresinicial2"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        android:importantForAutofill="auto"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnpinicial2"
+        app:layout_constraintTop_toTopOf="@+id/imgfundo2"
+        app:srcCompat="@drawable/icons8_atores_30" />
+
+    <ImageButton
+        android:id="@+id/imgbtnpinicial2"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        android:importantForAutofill="auto"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtntelefoneinicial2"
+        app:layout_constraintTop_toTopOf="@+id/imgfundo2"
+        app:srcCompat="@drawable/icons8_pessoa_30" />
+
+    <ImageButton
+        android:id="@+id/imgbtntelefoneinicial2"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="60dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="@+id/imgfundo2"
+        app:layout_constraintTop_toTopOf="@+id/imgfundo2"
+        app:srcCompat="@drawable/telefoneicon" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logopanico" />
+
+    <ImageView
+        android:id="@+id/imgbtnvoltar"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/setaes" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/atores"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnvoltar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAtores"
+        android:layout_width="409dp"
+        android:layout_height="605dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

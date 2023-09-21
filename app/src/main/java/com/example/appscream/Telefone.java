@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 public class Telefone extends AppCompatActivity {
 
-    ImageButton ring, imgbtnhome, imgbtnfilme, imgbtnserie, imgbtnper, imgbtntelefone, imgbtnvoltar;
+    ImageButton ring, imgbtnvoltar, imgbtnhome5, imgbtnatores5, imgbtnp5, imgbtntelefone5;
 
 
     @Override
@@ -20,9 +20,10 @@ public class Telefone extends AppCompatActivity {
         setContentView(R.layout.activity_telefone);
 
         ring = findViewById(R.id.imageButton10);
-        imgbtnhome = findViewById(R.id.imgbtnhome7);
-        imgbtnserie = findViewById(R.id.imgbtnserie7);
-        imgbtntelefone = findViewById(R.id.imgbtntelefone7);
+        imgbtnhome5 = findViewById(R.id.imgbtnhomeinicial5);
+        imgbtnatores5 = findViewById(R.id.imgbtnatoresinicial5);
+        imgbtnp5 = findViewById(R.id.imgbtnpinicial5);
+        imgbtntelefone5 = findViewById(R.id.imgbtntelefoneinicial5);
         imgbtnvoltar = findViewById(R.id.imgbtnvoltar7);
         final MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.scream);
 
@@ -34,7 +35,7 @@ public class Telefone extends AppCompatActivity {
 
         });
 
-        imgbtnhome.setOnClickListener(new View.OnClickListener(){
+        imgbtnhome5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 startActivity(new Intent(Telefone.this, HomeActivity.class));
@@ -42,15 +43,22 @@ public class Telefone extends AppCompatActivity {
         });
 
 
-        imgbtnserie.setOnClickListener(new View.OnClickListener(){
+        imgbtnatores5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(Telefone.this, SerieActivity.class));
+                startActivity(new Intent(Telefone.this, AtoresActivity.class));
+            }
+
+        });
+        imgbtnp5.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(Telefone.this, PersonagensActivity.class));
             }
 
         });
 
-        imgbtntelefone.setOnClickListener(new View.OnClickListener(){
+        imgbtntelefone5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 startActivity(new Intent(Telefone.this, Telefone.class));

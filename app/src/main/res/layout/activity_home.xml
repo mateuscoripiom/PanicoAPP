@@ -2,21 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1E1E1E"
     tools:context=".HomeActivity">
-
-    <ImageView
-        android:id="@+id/imgfundo"
-        android:layout_width="407dp"
-        android:layout_height="70dp"
-
-        android:layout_marginBottom="-10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/navbar" />
 
     <ImageView
         android:id="@+id/imageView18"
@@ -63,89 +53,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView18" />
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+    <ImageView
+        android:id="@+id/imgfundo"
+        android:layout_width="407dp"
+        android:layout_height="70dp"
+
+        android:layout_marginBottom="-10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imgpanico1"
-                    android:layout_width="110dp"
-                    android:layout_height="166dp"
-                    android:layout_marginStart="20dp"
-                    android:elevation="2dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/posterpanico" />
-
-                <ImageView
-                    android:id="@+id/imgpanico2"
-                    android:layout_width="110dp"
-                    android:layout_height="166dp"
-                    android:layout_marginStart="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imgpanico1"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/posterpanico2" />
-
-                <ImageView
-                    android:id="@+id/imgpanico3"
-                    android:layout_width="110dp"
-                    android:layout_height="166dp"
-                    android:layout_marginStart="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imgpanico2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/posterpanico3" />
-
-                <ImageView
-                    android:id="@+id/imgpanico4"
-                    android:layout_width="110dp"
-                    android:layout_height="166dp"
-                    android:layout_marginStart="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imgpanico3"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/posterpanico4" />
-
-                <ImageView
-                    android:id="@+id/imgpanico5"
-                    android:layout_width="110dp"
-                    android:layout_height="166dp"
-                    android:layout_marginStart="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imgpanico4"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/posterpanico5" />
-
-                <ImageView
-                    android:id="@+id/imgpanico6"
-                    android:layout_width="110dp"
-                    android:layout_height="166dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imgpanico5"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/posterpanico6" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-    </HorizontalScrollView>
+        app:srcCompat="@drawable/navbar" />
 
     <ImageButton
         android:id="@+id/imgbtnhomeinicial"
@@ -153,32 +70,54 @@
         android:layout_height="49dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
         android:background="@null"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnatoresinicial"
         app:layout_constraintStart_toStartOf="@+id/imgfundo"
         app:layout_constraintTop_toTopOf="@+id/imgfundo"
         app:srcCompat="@drawable/casa" />
 
     <ImageButton
-        android:id="@+id/imgbtnserieinicial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:id="@+id/imgbtnatoresinicial"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
         android:background="@null"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtntelefoneinicial"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnhomeinicial"
+        android:importantForAutofill="auto"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnpinicial"
         app:layout_constraintTop_toTopOf="@+id/imgfundo"
-        app:srcCompat="@drawable/tvicon" />
+        app:srcCompat="@drawable/icons8_atores_30" />
+
+    <ImageButton
+        android:id="@+id/imgbtnpinicial"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        android:importantForAutofill="auto"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtntelefoneinicial"
+        app:layout_constraintTop_toTopOf="@+id/imgfundo"
+        app:srcCompat="@drawable/icons8_pessoa_30" />
 
     <ImageButton
         android:id="@+id/imgbtntelefoneinicial"
-        android:layout_width="wrap_content"
+        android:layout_width="63dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
-        android:layout_marginEnd="84dp"
+        android:layout_marginEnd="60dp"
         android:background="@null"
         app:layout_constraintEnd_toEndOf="@+id/imgfundo"
         app:layout_constraintTop_toTopOf="@+id/imgfundo"
         app:srcCompat="@drawable/telefoneicon" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="208dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".PersonagensActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AtoresActivity"
+            android:exported="false" />
+        <activity
             android:name=".SerieActivity"
             android:exported="false" />
         <activity
